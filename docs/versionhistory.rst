@@ -31,7 +31,8 @@ This library adheres to `Semantic Versioning 2.0 <http://semver.org/>`_.
   (`#773 <https://github.com/agronholm/anyio/issues/773>`_; PR by @AmirF194)
 
 - Fixed buffered streams accepting a delimiter beyond ``receive_until()``'s
-  ``max_bytes`` limit when it arrived in a single chunk (PR by @Aurelucien)
+  ``max_bytes`` limit when it arrived in a single chunk
+  (`#1340 <https://github.com/agronholm/anyio/pull/1340>`_; PR by @Aurelucien)
 
 **4.15.1**
 
