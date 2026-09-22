@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import pickle
 import sys
 import time
 from functools import partial
@@ -115,7 +116,8 @@ def unpicklable_worker_result(raise_error: bool) -> object:
 
 @pytest.mark.parametrize("raise_error", [False, True])
 async def test_worker_traceback_pickle_failure(raise_error: bool) -> None:
-    expected = TypeError if raise_error else AttributeError
+    # Pickling a local function raises different errors across Python runtimes.
+    expected = TypeError if raise_error else (AttributeError, pickle.PicklingError)
     pid = await to_process.run_sync(os.getpid)
     with pytest.raises(expected) as caught:
         await to_process.run_sync(unpicklable_worker_result, raise_error)
