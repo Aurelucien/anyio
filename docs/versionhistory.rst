@@ -30,7 +30,8 @@ This library adheres to `Semantic Versioning 2.0 <http://semver.org/>`_.
   legitimately ``None``
   (`#773 <https://github.com/agronholm/anyio/issues/773>`_; PR by @AmirF194)
 - Fixed worker processes and their streams not being cleaned up when initialization
-  fails or is cancelled (PR by @Aurelucien)
+  fails or is cancelled
+  (`#1337 <https://github.com/agronholm/anyio/pull/1337>`_; PR by @Aurelucien)
 
 **4.15.1**
 
