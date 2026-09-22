@@ -30,6 +30,9 @@ This library adheres to `Semantic Versioning 2.0 <http://semver.org/>`_.
   legitimately ``None``
   (`#773 <https://github.com/agronholm/anyio/issues/773>`_; PR by @AmirF194)
 
+- Fixed text receive streams silently discarding incomplete characters at end-of-file
+  instead of applying the configured decoding error handler (PR by @Aurelucien)
+
 **4.15.1**
 
 - Implemented a compatibility fix for supporting direct access of ``anyio.*`` submodules
