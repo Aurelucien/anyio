@@ -60,7 +60,8 @@ async def test_initialization_failure_closes_process(
                 sys.executable,
                 "-u",
                 "-c",
-                "import sys; print('BROKEN', flush=True); sys.stdin.buffer.read()",
+                "import sys; sys.stdout.buffer.write(b'BROKEN\\n'); "
+                "sys.stdin.buffer.read()",
             ]
         elif failure == "early_exit":
             command = [sys.executable, "-c", "pass"]
@@ -70,8 +71,9 @@ async def test_initialization_failure_closes_process(
                 "-u",
                 "-c",
                 (
-                    "import pickle, sys; print('READY', flush=True); "
-                    "pickle.load(sys.stdin.buffer); print('BROKEN', flush=True); "
+                    "import pickle, sys; sys.stdout.buffer.write(b'READY\\n'); "
+                    "pickle.load(sys.stdin.buffer); "
+                    "sys.stdout.buffer.write(b'BROKEN\\n'); "
                     "sys.stdin.buffer.read()"
                 ),
             ]
