@@ -31,7 +31,8 @@ This library adheres to `Semantic Versioning 2.0 <http://semver.org/>`_.
   (`#773 <https://github.com/agronholm/anyio/issues/773>`_; PR by @AmirF194)
 
 - Fixed ``run_process(input=b"")`` inheriting standard input instead of sending
-  end-of-file (PR by @Aurelucien)
+  end-of-file
+  (`#1338 <https://github.com/agronholm/anyio/pull/1338>`_; PR by @Aurelucien)
 
 **4.15.1**
 
