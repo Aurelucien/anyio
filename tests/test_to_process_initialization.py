@@ -60,8 +60,10 @@ async def test_initialization_failure_closes_process(
                 sys.executable,
                 "-u",
                 "-c",
-                "import sys; sys.stdout.buffer.write(b'BROKEN\\n'); "
-                "sys.stdin.buffer.read()",
+                (
+                    "import sys; sys.stdout.buffer.write(b'BROKEN\\n'); "
+                    "sys.stdin.buffer.read()"
+                ),
             ]
         elif failure == "early_exit":
             command = [sys.executable, "-c", "pass"]
