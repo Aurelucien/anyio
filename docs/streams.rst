@@ -185,11 +185,6 @@ Text streams
 Text streams wrap existing receive/send streams and encode/decode strings to bytes and
 vice versa.
 
-When the receive stream reaches end-of-file, decoding is finalized. An incomplete
-trailing character raises ``UnicodeDecodeError`` with ``errors="strict"``, produces
-a replacement character with ``errors="replace"``, or is discarded with
-``errors="ignore"``. Any final decoded text is returned before ``EndOfStream``.
-
 Example::
 
     from anyio import run, create_memory_object_stream
