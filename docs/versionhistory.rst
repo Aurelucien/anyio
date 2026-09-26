@@ -29,7 +29,6 @@ This library adheres to `Semantic Versioning 2.0 <http://semver.org/>`_.
   from within ``from_thread.run_sync()``), where ``asyncio.current_task()`` is
   legitimately ``None``
   (`#773 <https://github.com/agronholm/anyio/issues/773>`_; PR by @AmirF194)
-
 - Fixed buffered streams accepting a delimiter beyond ``receive_until()``'s
   ``max_bytes`` limit when it arrived in a single chunk
   (`#1340 <https://github.com/agronholm/anyio/pull/1340>`_; PR by @Aurelucien)

@@ -151,10 +151,6 @@ A buffered byte stream wraps an existing bytes-oriented receive stream and provi
 certain amenities that require buffering, such as receiving an exact number of bytes, or
 receiving until the given delimiter is found.
 
-For ``receive_until()``, the entire delimiter must fit within the first ``max_bytes``
-bytes. Otherwise, ``DelimiterNotFound`` is raised and any bytes already received remain
-in the buffer, so the caller can retry with a larger limit or read the buffered data.
-
 Example::
 
     from anyio import run, create_memory_object_stream
